@@ -2,15 +2,22 @@
 <html>
 <head>
 <meta charset="UTF-8">
-  <title>RailsProject - Weather forecast</title>
+  <title>RailsProject - Prognoza pogody</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
  
 </head>
 <body>
-<header><%= image_tag("logo.png", :alt => "Logo") %></header>
+<header class="center"><%= image_tag("logo.png", :alt => "Logo", :id => "logo") %></header>
+<nav class="center">
+<a href="/">Strona glowna</a>
+<a href="/numerical/forecast">Prognoza numeryczna</a>
+<a href="/mailer/mailer">Subskrypcja</a>
+</nav>
+<div id="content" class="center">
 <%= yield %>
-<footer>Emil Pluciennikowski</footer>
+</div>
+<footer class="center">Emil Pluciennikowski</footer>
 </body>
 </html>
