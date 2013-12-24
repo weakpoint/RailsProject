@@ -1,0 +1,12 @@
+<div class="center" id="content_numerical">
+<%= image_tag("legenda.png", :alt=>"Legenda") %>
+<%= image_tag(@linkToMapImage, :alt=>" ", :id=> "mapImage") %>
+</div>
+
+<div id="city_chooser" class="center">
+<select name='city' size='1' id="citySelect">
+<%= options_for_select(@cities) %>
+</select>
+<span> < -- Wybierz interesujace Cie miasto wojewodzkie</span>
+</div>
+<%= javascript_include_tag "numerical" %>
