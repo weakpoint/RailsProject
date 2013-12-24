@@ -1,11 +1,11 @@
 
 <div class="center">
-<%= image_tag(@linkToDayImage, :alt=>" ") %>
-<%= image_tag(@linkToNightImage, :alt=>" ") %>
+<%= image_tag(@linkToDayImage, :alt=>" ", :id=> "dayImage") %>
+<%= image_tag(@linkToNightImage, :alt=>" ", :id=> "nightImage") %>
 </div>
 
 <div id="day_chooser" class="center">
-<select name='day' size='1'>
+<select name='day' size='1' id="daySelect">
 <%= options_for_select(@days) %>
 </select>
 </div>
