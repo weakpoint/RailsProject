@@ -1,0 +1,24 @@
+<h1>Usuwanie z listy mailingowej</h1>
+
+<%= form_for(@subscription, :url => "/subscriptions/remove") do |f| %>
+  <% if @subscription.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@subscription.errors.count, "error") %> nie mozna zapisac tego adresu e-mail:</h2>
+
+      <ul>
+      <% @subscription.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email %> </div>
+  <div class="actions">
+    <%= f.submit(:value => "Usun") %>
+  </div>
+<% end %>
+
+<%= link_to 'Powrot', subscriptions_path %>

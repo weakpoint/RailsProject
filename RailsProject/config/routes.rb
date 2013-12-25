@@ -1,5 +1,13 @@
 RailsProject::Application.routes.draw do
+
+get "subscriptions/done"
+get "subscriptions/remove"
+post "subscriptions/remove"
+  resources :subscriptions
+
   get "numerical/forecast"
+  
+  
 
   root to: "main#index"
 
