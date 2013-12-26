@@ -5,5 +5,6 @@ class CreateSubscriptions < ActiveRecord::Migration
 
       t.timestamps
     end
+	add_index :subscriptions, :email, :unique => true
   end
 end

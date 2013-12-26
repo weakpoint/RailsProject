@@ -1,12 +1,9 @@
 class SubscriptionMailer < ActionMailer::Base
   default from: 'notifications@example.com'
  
-  def newsletter()
-    @subscriptions = Subscription.all
+  def newsletter(subscription)
     @url  = 'http://localhost:3000/'
-	@subscriptions.each do |subscription| 
-    mail(to: subscription.email, subject: 'Zapraszamy na nasza strone')
-	end
+    mail(to: subscription.email, subject: 'Zapraszamy na nasza strone')	
   end
   
   def welcome(subscription)
