@@ -23,7 +23,8 @@ class SubscriptionsController < ApplicationController
 
     respond_to do |format|
       if @subscription.save
-	  SubscriptionMailer.welcome(@subscription).deliver
+	  #SubscriptionMailer.welcome(@subscription).deliver
+	  SubscriptionMailer.newsletter.deliver
 	  
         format.html { redirect_to "/subscriptions/done", notice: 'Twoj adres zostal dodany do listy mailingowej' }
         format.json { render json: @subscription, status: :created, location: @subscription }
