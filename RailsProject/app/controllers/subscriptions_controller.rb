@@ -24,12 +24,8 @@ class SubscriptionsController < ApplicationController
     respond_to do |format|
 	
       if @subscription.valid? && @subscription.save
-	  SubscriptionMailer.welcome(@subscription).deliver
+	  SubscriptionMailer.delay.send_welcome(@subscription)
 	  
-	#	@subscriptions = Subscription.all
-	#	@subscriptions.each do |subscription| 
-	#		SubscriptionMailer.newsletter(subscription).deliver
-	#	end
         format.html { redirect_to "/subscriptions/done", notice: 'Twoj adres zostal dodany do listy mailingowej' }
         format.json { render json: @subscription, status: :created, location: @subscription }
       else
