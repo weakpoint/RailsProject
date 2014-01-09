@@ -12,11 +12,11 @@ class NumericalController < ApplicationController
   date = Time.now.strftime("%Y%m%d")
   time = Time.now.strftime("%H").to_i
   
-  if (time>= 2 && time < 8)
+  if (time>= 2 && time < 10)
   hour = "00"
-  elsif (time>= 8 && time < 14)
+  elsif (time>= 10 && time < 16)
   hour = "06"
-  elsif (time>= 14 && time < 20)
+  elsif (time>= 16 && time < 22)
   hour = "12"
   else 
   hour = "18"
